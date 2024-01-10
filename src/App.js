@@ -6,8 +6,9 @@ import {
 } from "react-router-dom";
 import Users from "./user/pages/Users";
 import NewPlace from "./places/pages/NewPlace";
-import MainNavigation from "./shared/Navigation/MainNavigation";
 import UserPlaces from "./places/pages/UserPlaces";
+import MainNavigation from "./shared/component/Navigation/MainNavigation";
+import UpdatePlace from "./places/pages/UpdatePlace";
 
 // another way to write the function which is arrow function
 // const App=()=>{
@@ -38,6 +39,9 @@ function App() {
           <Route path="/places/new" exact>
             {/*exact or exact={true} both are same*/}
             <NewPlace />
+          </Route>
+          <Route path="/places/:placeId">
+            <UpdatePlace />
           </Route>
           <Redirect to="/" />
           {/*the term Redirect is used for redirecting the url if the url endpoint is /anything else to / endpoint*/}
